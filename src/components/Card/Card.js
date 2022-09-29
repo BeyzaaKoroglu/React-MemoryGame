@@ -1,9 +1,21 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { handleClickCard } from "../../redux/game/gameSlice";
 import "./Card.css";
 
 const Card = ({ card }) => {
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    dispatch(handleClickCard(card.id));
+  };
   return (
-    <div className="card">
+    <div
+      className={`card ${card.isOpen ? "opened" : ""} ${
+        card.isComplete ? "matched" : ""
+      }`}
+      onClick={handleClick}
+    >
       <div className="front">?</div>
       <div className="back">
         <img
