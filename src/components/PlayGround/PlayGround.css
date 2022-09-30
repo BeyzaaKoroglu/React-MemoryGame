@@ -3,5 +3,9 @@
   flex-wrap: wrap;
   justify-content: space-between;
   perspective: 1000px;
-  margin-bottom: -15px;
+  margin: 55px auto -15px;
+  width: 40%;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 25px 15px 10px;
+  border-radius: 10px;
 }

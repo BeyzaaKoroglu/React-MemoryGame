@@ -1,11 +1,10 @@
 body {
-  background: #fff;
+  background: #ba68c8;
   font-family: "Delius", cursive;
 }
 
 .App {
-  padding: 35px;
-  width: 40%;
-  margin: 20px auto;
+  display: flex;
+  margin: 0 auto 20px;
   border-radius: 10px;
 }

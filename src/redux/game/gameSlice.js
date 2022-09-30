@@ -97,6 +97,7 @@ export const gameSlice = createSlice({
     ],
     duplicatedCards: [],
     openedCards: [],
+    completedCards: 15,
   },
   reducers: {
     handleDublicateCards: {
@@ -108,6 +109,8 @@ export const gameSlice = createSlice({
           .map((value) => ({ value, sort: Math.random() }))
           .sort((a, b) => a.sort - b.sort)
           .map(({ value }) => value);
+
+        state.completedCards = 0;
       },
     },
     handleClickCard: {
@@ -131,6 +134,7 @@ export const gameSlice = createSlice({
               );
               card.isComplete = true;
             });
+            state.completedCards += 1;
           } else {
             state.openedCards.forEach((openedCard) => {
               const card = state.duplicatedCards.find(
@@ -140,7 +144,6 @@ export const gameSlice = createSlice({
             });
           }
         }
-
         state.openedCards = [];
       },
     },
